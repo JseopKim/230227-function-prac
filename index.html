@@ -5,8 +5,50 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+    }
+    #root {
+      width: 100px;
+      height: 100px;
+      background-color: black;
+    }
+  </style>
 </head>
 <body>
-  230227 함수 연습
+  <div id="root">
+
+  </div>
+  <script>
+    let rootElement = document.getElementById("root");
+    console.dir(rootElement);
+    let weeks = ["월요일 오늘","수요일 쉼", "금요일 놀자", "토요일 고기", "일요일"];
+    let colors = ["red", "orange", "yellow", "green", "blue", "navy", "purple"];
+    let texts = ["RED", "ORANGE", "YELLOW", "GREEN", "BLUE", "NAVY", "PURPLE"];
+    let positions = []
+
+    // let mainText = "<h1>수요일은 쉽니다.</h1>";
+    // root.textContent = weeks[0];
+
+    let counter = 0; 
+
+    function increase(value) {
+      value = value + 1;
+      console.log(value);
+    }
+    rootElement.addEventListener("click", function(){
+      rootElement.style.backgroundColor = colors[counter];
+      rootElement.textContent = texts[counter];
+
+
+      counter = counter + 1;
+      if(counter >= colors.length) {
+        counter = 0;
+      }
+      console.log(counter);
+    });
+
+  </script>
 </body>
 </html>
